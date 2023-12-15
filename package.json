@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "generate:ts": "rm -rf __generated__/open-api-ts && npx @openapitools/openapi-generator-cli generate -i api.yaml -g typescript-fetch -o __generated__/open-api-ts",
     "generate:go": "rm -rf __generated__/open-api-go && npx @openapitools/openapi-generator-cli generate -i api.yaml -g typescript-fetch -o __generated__/open-api-go"
   },
@@ -12,5 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.7.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
   }
 }

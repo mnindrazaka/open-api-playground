@@ -62,6 +62,51 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Product"
+    put:
+      tags:
+        - Product
+      summary: Update product by id
+      operationId: updateProductById
+      security: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: number
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProductRequest"
+      responses:
+        "200":
+          description: successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+  /products/add:
+    post:
+      tags:
+        - Product
+      summary: Create product
+      operationId: createProduct
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProductRequest"
+      responses:
+        "200":
+          description: successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
 components:
   schemas:
     Product:
@@ -81,6 +126,42 @@ components:
       properties:
         id:
           type: string
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        discountPercentage:
+          type: number
+        rating:
+          type: number
+        stock:
+          type: number
+        brand:
+          type: string
+        category:
+          type: string
+        thumbnail:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+    ProductRequest:
+      type: object
+      required:
+        - title
+        - description
+        - price
+        - discountPercentage
+        - rating
+        - stock
+        - brand
+        - category
+        - thumbnail
+        - images
+      properties:
         title:
           type: string
         description:

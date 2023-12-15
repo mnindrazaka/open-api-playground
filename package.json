@@ -1,0 +1,16 @@
+{
+  "name": "open-api-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate:ts": "rm -rf __generated__/open-api-ts && npx @openapitools/openapi-generator-cli generate -i api.yaml -g typescript-fetch -o __generated__/open-api-ts",
+    "generate:go": "rm -rf __generated__/open-api-go && npx @openapitools/openapi-generator-cli generate -i api.yaml -g typescript-fetch -o __generated__/open-api-go"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0"
+  }
+}

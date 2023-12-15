@@ -100,49 +100,39 @@ paths:
               schema:
                 type: object
                 required:
-                  - products
-                  - total
-                  - skip
-                  - limit
+                  - id
+                  - title
+                  - description
+                  - price
+                  - discountPercentage
+                  - rating
+                  - stock
+                  - brand
+                  - category
+                  - thumbnail
+                  - images
                 properties:
-                  products:
+                  id:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  price:
+                    type: number
+                  discountPercentage:
+                    type: number
+                  rating:
+                    type: number
+                  stock:
+                    type: number
+                  brand:
+                    type: string
+                  category:
+                    type: string
+                  thumbnail:
+                    type: string
+                  images:
                     type: array
                     items:
-                      type: object
-                      required:
-                        - id
-                        - title
-                        - description
-                        - price
-                        - discountPercentage
-                        - rating
-                        - stock
-                        - brand
-                        - category
-                        - thumbnail
-                        - images
-                      properties:
-                        id:
-                          type: string
-                        title:
-                          type: string
-                        description:
-                          type: string
-                        price:
-                          type: number
-                        discountPercentage:
-                          type: number
-                        rating:
-                          type: number
-                        stock:
-                          type: number
-                        brand:
-                          type: string
-                        category:
-                          type: string
-                        thumbnail:
-                          type: string
-                        images:
-                          type: array
-                          items:
-                            type: string
+                      type: string

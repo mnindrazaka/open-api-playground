@@ -50,11 +50,7 @@ paths:
       operationId: getProductById
       security: []
       parameters:
-        - name: id
-          in: path
-          schema:
-            type: number
-          required: true
+        - $ref: "#/components/parameters/ProductId"
       responses:
         "200":
           description: Success
@@ -69,11 +65,7 @@ paths:
       operationId: updateProductById
       security: []
       parameters:
-        - name: id
-          in: path
-          schema:
-            type: number
-          required: true
+        - $ref: "#/components/parameters/ProductId"
       requestBody:
         required: true
         content:
@@ -184,3 +176,10 @@ components:
           type: array
           items:
             type: string
+  parameters:
+    ProductId:
+      name: id
+      in: path
+      schema:
+        type: number
+      required: true
